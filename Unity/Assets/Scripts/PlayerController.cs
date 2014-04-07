@@ -26,12 +26,21 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+		// retset all acceleration if movement is stopped by collisions to left or right
+		if(playerPhysics.movementStopped){
+			targetSpeed = 0;
+			currentSpeed = 0;
+		}
+
+		//input
 		targetSpeed = Input.GetAxisRaw("Horizontal") * speed;
 		currentSpeed = IncrementTowards(currentSpeed, targetSpeed, acceleration);
 
 		if(playerPhysics.grounded){
 			//if player is on the ground, then jump. Jump is automatically set to the space bar.
 			amountToMove.y = 0;
+
+			//jump
 			if(Input.GetButtonDown("Jump")){
 				amountToMove.y = jumpHeight;
 
