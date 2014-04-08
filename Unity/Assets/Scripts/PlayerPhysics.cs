@@ -17,6 +17,8 @@ public class PlayerPhysics : MonoBehaviour {
 
 	[HideInInspector]
 	public bool grounded;
+	[HideInInspector]
+	public bool movementStopped;
 
 	Ray ray;
 	RaycastHit hit;
@@ -46,18 +48,49 @@ public class PlayerPhysics : MonoBehaviour {
 			Debug.DrawRay(ray.origin, ray.direction);
 
 			// info about which other collider the ray hit
-			if(Physics.Raycast(ray, out hit, Mathf.Abs(deltaY), collisionMask)){
+			if(Physics.Raycast(ray, out hit, Mathf.Abs(deltaY) + skin, collisionMask)){
 				// Get distance between player and ground
 				float dst = Vector3.Distance(ray.origin, hit.point);
 
 				// stop player's downwards movement after coming within skin width of a collider
 				if (dst > skin){
-					deltaY = dst * dir + skin;
+					deltaY = dst * dir - skin * dir;
 				}
 				else{
 					deltaY = 0;
 				}
 				grounded = true;
+				break;
+			}
+		}
+
+
+		
+		//Raycasting downwards to see if there is any left or right collisions to the player, so p stops
+
+		movementStopped = false;
+
+		for (int i = 0; i<3; i++){
+			float dir = Mathf.Sign(deltaX);
+			float x = p.x + c.x + s.y/2 * dir; 
+			float y = p.y + c.y - s.y/2 + s.y/2 * i; 
+			
+			ray = new Ray(new Vector2(x,y), new Vector2(dir, 0));
+			Debug.DrawRay(ray.origin, ray.direction);
+			
+			// info about which other collider the ray hit
+			if(Physics.Raycast(ray, out hit, Mathf.Abs(deltaX) + skin, collisionMask)){
+				// Get distance between player and ground
+				float dst = Vector3.Distance(ray.origin, hit.point);
+				
+				// stop player's downwards movement after coming within skin width of a collider
+				if (dst > skin){
+					deltaX = dst * dir - skin * dir;
+				}
+				else{
+					deltaX = 0;
+				}
+				movementStopped = true;
 				break;
 			}
 		}
