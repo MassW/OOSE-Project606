@@ -15,6 +15,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
   - 54: {fileID: 5400000}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -74,8 +75,8 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
+  m_Constraints: 120
+  m_CollisionDetection: 0
 --- !u!65 &6500000
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 20
-  speed: 8
+  speed: 20
   acceleration: 30
   jumpHeight: 12
 --- !u!114 &11400002
@@ -130,6 +131,21 @@ MonoBehaviour:
     m_Bits: 256
   grounded: 0
   movementStopped: 0
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c833a86d23c54528a0b81332a642044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  curHealth: 100
+  dead: 0
+  healthBarLength: 17.6599998
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

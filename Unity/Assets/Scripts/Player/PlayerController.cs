@@ -15,13 +15,17 @@ public class PlayerController : MonoBehaviour {
 	private float targetSpeed;
 	private Vector2 amountToMove;
 
+	private PlayerHealth playerHealth;
+
 	private PlayerPhysics playerPhysics;
 
 	// Use this for initialization
 	void Start () {
 	
 		playerPhysics = GetComponent<PlayerPhysics>();
+		playerHealth = GetComponent<PlayerHealth> ();
 	}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -69,6 +73,14 @@ public class PlayerController : MonoBehaviour {
 			else{
 				return target;
 			}
+		}
+	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		GameObject collidingObject = collision.gameObject;
+		if (collidingObject.tag == "Enemy") {
+			playerHealth.AdjustCurrentHealth(playerHealth.curHealth - 10);
 		}
 	}
 }
