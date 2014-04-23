@@ -6,6 +6,8 @@ public class GameCamera : MonoBehaviour {
 	private Transform target;
 	public float trackSpeed = 10;
 
+
+
 	public void SetTarget(Transform t){
 		target = t;
 	}
