@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	void OnGUI(){
 		GUI.color = Color.red;
-		GUI.Box(new Rect(0,0,healthBarLength , 20),"Lifes left: " + curHealth);
+		GUI.Box(new Rect(0,0,healthBarLength , 20),"Lives left: " + curHealth);
 		if (dead == true) {
 			Dead();
 		}
