@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour {
 	public bool dead = false;
 
 	public float healthBarLength;
+	
 
 	// Use this for initialization
 	void Start () {
@@ -24,13 +25,15 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		
-		GUI.Box(new Rect(0,0,healthBarLength , 20),"");
+		GUI.color = Color.red;
+		GUI.Box(new Rect(0,0,healthBarLength , 20),"Lifes left: " + curHealth);
 		if (dead == true) {
 			Dead();
 		}
 	}
-	
+
+
+
 	public void AdjustCurrentHealth(int h){
 		curHealth = h;
 		if (curHealth < 0) {
@@ -45,7 +48,8 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	void Dead(){
-		if (GUI.Button(new Rect(0,0, 100, 50), "Dead")) {
+		if (GUI.Button(new Rect(Screen.width/2,Screen.height/2, 400, 50), "GAME OVER. Press to restart")) {
+			Application.LoadLevel ("test_scene");
 				}
 	}
 }
