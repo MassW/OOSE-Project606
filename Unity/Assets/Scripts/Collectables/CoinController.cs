@@ -6,7 +6,7 @@ public class CoinController : MonoBehaviour {
 	public static int coinCount = 0;
 
 	void OnGUI(){
-		string coinText = "Total coins: " + coinCount;
+		string coinText = "Coins collected: " + coinCount;
 		GUI.Box(new Rect(Screen.width - 150, 20, 130, 20), coinText);
 	}
 }

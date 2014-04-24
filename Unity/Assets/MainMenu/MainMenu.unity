@@ -226,7 +226,6 @@ MonoBehaviour:
     m_StretchWidth: 1
     m_StretchHeight: 0
   backgroundTexture: {fileID: 2800000, guid: f31f9a756376a554594222b748d0301e, type: 3}
-  placementY: 0
   StartButton:
     m_Name: 
     m_Normal:
