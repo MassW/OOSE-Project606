@@ -5,7 +5,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	//variables
 	public int maxHealth = 100;
-	public int curHealth = 100;
+	public static int curHealth = 100;
 
 	public bool dead = false;
 
@@ -20,7 +20,15 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (curHealth < 0) {
+			curHealth = 0;
+			dead = true;
+		}
+		if (curHealth > maxHealth) {
+			curHealth = maxHealth;
+		}
+		
+		healthBarLength = (Screen.width / 2) * (curHealth / (float) maxHealth); 
 
 	}
 
@@ -34,7 +42,7 @@ public class PlayerHealth : MonoBehaviour {
 
 
 
-	public void AdjustCurrentHealth(int h){
+	/*public void AdjustCurrentHealth(int h){
 		curHealth = h;
 		if (curHealth < 0) {
 			curHealth = 0;
@@ -45,7 +53,7 @@ public class PlayerHealth : MonoBehaviour {
 		}
 
 		healthBarLength = (Screen.width / 2) * (curHealth / (float) maxHealth); 
-	}
+	}*/
 
 	void Dead(){
 		if (GUI.Button(new Rect(Screen.width/2,Screen.height/2, 400, 50), "GAME OVER. Press to restart")) {

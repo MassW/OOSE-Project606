@@ -9,19 +9,23 @@ public class CoinBehavior : MonoBehaviour {
 		print("wuhu");
 	}
 
-	void OnTriggerEnter(Collider collider){
+	void OnCollisionEnter2D(Collision2D collider){
 
-
-		switch(collider.gameObject.name){
+		if (collider.transform.name == "NewPlayer") {
+			CoinController.coinCount++;
+			Destroy(this.gameObject);
+			print ("hit");
+		}
+		/*switch(collider2D.gameObject.name){
 
 			//to destroy coin
-		case "Player(Clone)":
+		case "NewPlayer":
 
 			CoinController.coinCount++;
 			Destroy(this.gameObject);
 			print("wuhu");
 
 			break;
-		}
+		}*/
 	}
 }
