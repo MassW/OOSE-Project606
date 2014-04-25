@@ -16,6 +16,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400006}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -146,6 +147,19 @@ MonoBehaviour:
   curHealth: 100
   dead: 0
   healthBarLength: 17.6599998
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f9ea56d842f4f4f8a1f9dcee8b2c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pizzaAmmount: 0
+  pizza: {fileID: 100000, guid: d2ddcf110b692124ba0c52d7b936c732, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
