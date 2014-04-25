@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pizzaAmmount: 0
-  pizza: {fileID: 100000, guid: 595b5db717f4405469284d00e1018df7, type: 2}
+  pizza: {fileID: 100000, guid: d2ddcf110b692124ba0c52d7b936c732, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
