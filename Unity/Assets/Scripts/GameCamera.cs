@@ -4,7 +4,7 @@ using System.Collections;
 public class GameCamera : MonoBehaviour {
 
 	private Transform target;
-	public float trackSpeed = 10;
+	public float trackSpeed = 50;
 
 
 
@@ -28,7 +28,7 @@ public class GameCamera : MonoBehaviour {
 		}
 		else{
 			float dir = Mathf.Sign(target - n); // Must n be increased or decreased to get closer to target
-			n += a * Time.deltaTime * dir;
+			n += a * Time.deltaTime * 3 * dir;
 			
 			// if n has now passed target then return target, orherwise return n
 			if(dir == Mathf.Sign(target-n)){

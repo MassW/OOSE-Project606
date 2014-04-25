@@ -5,7 +5,7 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-	public GameObject player;
+	public GameObject NewPlayer;
 	private GameCamera cam;
 
 	// Use this for initialization
@@ -16,6 +16,6 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	private void SpawnPlayer(){
-		cam.SetTarget((Instantiate(player,Vector3.zero, Quaternion.identity) as GameObject).transform);
+		cam.SetTarget((Instantiate(NewPlayer,Vector3.zero, Quaternion.identity) as GameObject).transform);
 	}
 }
