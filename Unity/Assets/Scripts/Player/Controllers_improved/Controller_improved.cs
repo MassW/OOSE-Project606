@@ -10,7 +10,7 @@ public class Controller_improved : MonoBehaviour {
 	//how fast the character can go by maximum
 	public float maxSpeed = 10f;
 	// tells us where our character is facing
-	bool facingRight = true;
+	public bool facingRight = true;
 
 	bool grounded = false;
 	public Transform groundCheck;
