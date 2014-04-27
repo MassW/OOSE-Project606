@@ -23,6 +23,6 @@ public class Weapon : MonoBehaviour {
 		    	print(pizzaAmmount);
 			}
 		}
-	
 	}
+
 }
