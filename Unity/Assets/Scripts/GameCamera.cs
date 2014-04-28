@@ -5,20 +5,29 @@ public class GameCamera : MonoBehaviour {
 
 	private Transform target;
 	public float trackSpeed = 50;
-
+	public float offset = 3;
+	
+	public float dampTime = 0.15f;
+	private Vector3 velocity = Vector3.zero;
 
 
 	public void SetTarget(Transform t){
 		target = t;
 	}
 
-	void LateUpdate(){
+
+
+		// Update is called once per frame
+		void LateUpdate ()
+		{
+
 		if(target){
 			// start at cameras current x position
 			float x = IncrementTowards(transform.position.x, target.position.x, trackSpeed);
 			float y = IncrementTowards(transform.position.y, target.position.y, trackSpeed);
 			transform.position = new Vector3(x,y,transform.position.z);
 		}
+
 	}
 
 	//Increase n towards target by speed
@@ -38,6 +47,8 @@ public class GameCamera : MonoBehaviour {
 				return target;
 			}
 		}
+
 	}
+
 
 }

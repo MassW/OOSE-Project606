@@ -12,7 +12,7 @@ public class pizzaProjectile : MonoBehaviour {
 
 	void Start(){
 
-		controller_improved = GameObject.Find("NewPlayer").gameObject.GetComponent<Controller_improved>();
+		controller_improved = GameObject.FindWithTag("Player").gameObject.GetComponent<Controller_improved>();
 		//myBoss = GameObject.Find("Boss_0").gameObject.GetComponent<boss>();
 		if(controller_improved.facingRight)
 			projectileSpeed = 0.3f;

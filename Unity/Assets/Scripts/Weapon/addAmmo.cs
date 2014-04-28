@@ -11,7 +11,7 @@ public class addAmmo : MonoBehaviour {
 
 		ammoInBox = Random.Range(1,5);
 		print ("ammo in box " + ammoInBox);
-		weapon = GameObject.Find("NewPlayer").gameObject.GetComponent<Weapon>();
+		weapon = GameObject.FindWithTag("Player").gameObject.GetComponent<Weapon>();
 	}
 
 	void Update(){

@@ -11,7 +11,7 @@ public class CoinBehavior : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collider){
 
-		if (collider.transform.name == "NewPlayer") {
+		if (collider.transform.tag == "Player") {
 			CoinController.coinCount++;
 			Destroy(this.gameObject);
 			print ("hit");
