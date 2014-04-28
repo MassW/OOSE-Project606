@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameCamera : MonoBehaviour {
 
-	private Transform target;
+	public Transform target;
 	public float trackSpeed = 50;
 
 
