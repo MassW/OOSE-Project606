@@ -40,6 +40,11 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 
+	public void killed(){
+		dead = true;
+		curHealth = 0;
+		
+	}
 
 
 	/*public void AdjustCurrentHealth(int h){
