@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CoinBehavior : MonoBehaviour {
 
+// controls the coinCounter goes one point up pr. coin collected
+// destroy coin when collisioned by the player
 
 	void Start(){
 
@@ -16,16 +18,6 @@ public class CoinBehavior : MonoBehaviour {
 			Destroy(this.gameObject);
 			print ("hit");
 		}
-		/*switch(collider2D.gameObject.name){
 
-			//to destroy coin
-		case "NewPlayer":
-
-			CoinController.coinCount++;
-			Destroy(this.gameObject);
-			print("wuhu");
-
-			break;
-		}*/
 	}
 }
