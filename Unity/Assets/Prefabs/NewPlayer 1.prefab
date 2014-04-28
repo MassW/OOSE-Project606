@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pizzaAmmount: 0
   pizza: {fileID: 100000, guid: d2ddcf110b692124ba0c52d7b936c732, type: 2}
+  throwPizzaSound: {fileID: 8300000, guid: a2f80650b3e22eb4fa59113ba520c26b, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
