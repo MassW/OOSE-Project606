@@ -21,7 +21,8 @@ public class platform_UD : MonoBehaviour {
 	void Update () {
 		
 	
-		
+		// switch ase that make the platform mve between waypoint, script was dropped
+		// because the LookAt part did not work with 2D sprites
 		switch(state){
 		case "move": // lets enemy partol between two waypoints in the environment
 			if (wayPoints.Count > 0){
