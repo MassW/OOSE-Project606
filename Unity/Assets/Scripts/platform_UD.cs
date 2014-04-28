@@ -4,26 +4,26 @@ using System.Collections.Generic;
 
 
 
-public class enemy : MonoBehaviour {
+public class platform_UD : MonoBehaviour {
 	
 	public List<GameObject> wayPoints;
 	public int nextWayPoint = 0;
 	public float speed = 10.0f;
-	public string state = "patrol";
-	public float height;
-	private bool dead;
+	public string state = "move";
+
 	
 	
 	// Use this for initialization
 	void Start () {
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		
+	
+		
 		switch(state){
-		case "patrol": // lets enemy partol between two waypoints in the environment
+		case "move": // lets enemy partol between two waypoints in the environment
 			if (wayPoints.Count > 0){
 				transform.LookAt(wayPoints[nextWayPoint].transform.position);
 				transform.position += transform.forward * speed * Time.deltaTime;
@@ -35,20 +35,5 @@ public class enemy : MonoBehaviour {
 			
 			break;
 		}
-
-		// Allows for the player to kill enemy by jumping on top of the enemy 
-		RaycastHit hit;
-		Ray killRay = new Ray(transform.position, Vector3.up);
-		
-		if(!dead){
-			if(Physics.Raycast(killRay, out hit, height)){
-				if(hit.collider.tag == "Player")
-				{
-					Destroy(this.gameObject);
-				}
-			}
-		}
-		
-	
 	}
 }
