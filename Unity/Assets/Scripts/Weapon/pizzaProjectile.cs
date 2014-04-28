@@ -7,12 +7,13 @@ public class pizzaProjectile : MonoBehaviour {
 
 
 	Controller_improved controller_improved;
+	//boss myBoss;
 	float projectileSpeed;
 
 	void Start(){
 
 		controller_improved = GameObject.Find("NewPlayer").gameObject.GetComponent<Controller_improved>();
-
+		//myBoss = GameObject.Find("Boss_0").gameObject.GetComponent<boss>();
 		if(controller_improved.facingRight)
 			projectileSpeed = 0.3f;
 		else
@@ -27,6 +28,11 @@ public class pizzaProjectile : MonoBehaviour {
 
 	}
 	void OnCollisionEnter2D(Collision2D collision){
+
+		if(collision.gameObject.tag == "Boss"){
+			
+			collision.gameObject.GetComponent<boss>().bossLife-=1;
+		}
 		if(collision.gameObject.tag != "Player"){
 					
 			Destroy(gameObject);

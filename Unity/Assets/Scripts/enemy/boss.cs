@@ -7,13 +7,12 @@ public class boss : MonoBehaviour {
 
 	public GameObject croissaint;
 	GameObject clone;
-	Vector3 croissantVelocity;
-	bool bossAlive;
-	
-	
-	void Start () {
-		bossAlive = true;
+	//public int bossAlive;
+	public int bossLife;
 
+	void Start () {
+
+		bossLife=2;
 		InvokeRepeating ("LaunchProjectile", 3,2);
 
 	}
@@ -21,15 +20,25 @@ public class boss : MonoBehaviour {
 		clone = Instantiate(croissaint, transform.position, transform.rotation) as GameObject;
 		print("croissant fired");
 	}
+void Update(){
+		//bossAlive=bossLife;
+		if(bossLife<=0){
+			Destroy (gameObject);
+		}
+	
 
-	// Update is called once per frame
-	void Update () {
-
-
-
-
-			
-		
 	}
+//	void OnCollision2D(Collision2D collision){
+//	if(collision.gameObject.tag=="Pizza"){
+//		if (bossLife >1){
+////				bossLife--;
+////			}
+////			if(bossLife==1){
+////				Destroy(this.gameObject);
+////
+////			}
+////
+////		}
+//	}
 	
 }
