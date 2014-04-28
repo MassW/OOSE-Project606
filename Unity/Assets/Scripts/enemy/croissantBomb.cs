@@ -12,14 +12,15 @@ public class croissantBomb : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate(-0.1f,0.002f,0);
+		transform.Translate(-0.3f,0.02f,0);
 
 	}
 	void OnCollisionEnter2D(Collision2D collision){
 		if(collision.gameObject.tag == "Player"){
-			PlayerHealth.curHealth -= 10;
-			Destroy(this.gameObject);
-		}else{
+			PlayerHealth.curHealth -= 15;
+
+		}
+		if(collision.gameObject.tag != "Boss"){
 			Destroy(this.gameObject);
 		}
 	}
