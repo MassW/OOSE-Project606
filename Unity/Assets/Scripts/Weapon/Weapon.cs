@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour {
 	// Use this for initialization
 	public int pizzaAmmount;
 	public GameObject pizza;
+	public AudioClip throwPizzaSound;
 
 
 	void Start () {
@@ -21,7 +22,7 @@ public class Weapon : MonoBehaviour {
 		if (Input.GetButtonDown("Fire1")){
 			if (pizzaAmmount > 0){
 				GameObject clone = Instantiate(pizza, transform.position, transform.rotation) as GameObject;
-
+				AudioSource.PlayClipAtPoint(throwPizzaSound, transform.position);
 				pizzaAmmount--;
 		    	print(pizzaAmmount);
 			}
