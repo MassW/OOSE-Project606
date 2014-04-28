@@ -23,13 +23,13 @@ public class MainMenu : MonoBehaviour {
 
 
 		//start game button
-		if(GUI.Button(new Rect(Screen.width * 0.4f, Screen.height * 0.2f, Screen.width * 0.2f, Screen.height * 0.1f), "Start the game",StartButton)){
+		if(GUI.Button(new Rect(Screen.width * 0.15f, Screen.height * 0.6f, Screen.width * 0.2f, Screen.height * 0.1f), "Start the game",StartButton)){
 			print("Let the GAME begin...");
 			Application.LoadLevel ("test_scene");
 		}
 
 		//Quit button
-		if(GUI.Button(new Rect(Screen.width * 0.4f, Screen.height * 0.35f, Screen.width * 0.2f, Screen.height * 0.1f), "Go home!",StartButton)){
+		if(GUI.Button(new Rect(Screen.width * 0.15f, Screen.height * 0.75f, Screen.width * 0.2f, Screen.height * 0.1f), "Go home!",StartButton)){
 			print("Bye bye...");
 			Application.Quit();
 		}
