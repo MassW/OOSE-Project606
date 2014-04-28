@@ -1,23 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// code references to: http://unity3d.com/learn/tutorials/modules/beginner/2d/2d-controllers
+
 public class Controller_improved : MonoBehaviour {
-
+	// instance of PlayerHealth
 	private PlayerHealth playerHealth;
+
+	//hit is a bool used to control health is not drawn every time we enter or hit a enemy. Must only be once pr. hit.
 	private bool hit = false;
-
-
+	
 	//how fast the character can go by maximum
 	public float maxSpeed = 10f;
 	// tells us where our character is facing
 	public bool facingRight = true;
-
+	// player is first not grounded 
 	bool grounded = false;
+	// checks is player is on the ground
 	public Transform groundCheck;
+	// ground radius
 	float groundRadius = 0.2f;
 	// what is ground? What can it land on :)
 	public LayerMask whatIsGround;
-
 	public float jumpForce = 700f;
 
 	// Use this for initialization
@@ -34,12 +38,12 @@ public class Controller_improved : MonoBehaviour {
 		grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
 
 	
-		//control how much to move 
+		//control how much to move player- we use Horizontal controls
 		float move = Input.GetAxis ("Horizontal");
-		//print (grounded);
 
 		rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
 
+		// Automatically flip the player when facing left and right
 		if (move > 0 && !facingRight)
 						Flip ();
 				else if (move < 0 && facingRight)
@@ -48,6 +52,7 @@ public class Controller_improved : MonoBehaviour {
 
 	void Update()
 	{
+		// Jump when space is pressed
 		if(grounded && Input.GetKeyDown(KeyCode.Space))
 		{
 			print ("jump");
@@ -66,7 +71,7 @@ public class Controller_improved : MonoBehaviour {
 		transform.localScale = theScale;
 	} 
 
-	
+	//when player hit an enemy, 10 is drawn from his life bar
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		GameObject collidingObject = collision.gameObject;
