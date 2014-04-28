@@ -12,7 +12,7 @@ public class AnimationStateMachine : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float move = Input.GetAxis ("Horizontal");
-		print (move);
+
 		if (move < -0.01f || move > 0.01f)
 			animator.SetBool("move",true);
 			else	
