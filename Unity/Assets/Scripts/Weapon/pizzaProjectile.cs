@@ -37,6 +37,11 @@ public class pizzaProjectile : MonoBehaviour {
 					
 			Destroy(gameObject);
 		}
+		
+		if(collision.gameObject.tag == "Enemy"){
+			
+			collision.gameObject.GetComponent<enemy>().Hurt();
+		}
 	
 	}
 	
