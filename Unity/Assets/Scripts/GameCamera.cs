@@ -1,43 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-public class GameCamera : MonoBehaviour {
-
-	public Transform target;
-	public float trackSpeed = 50;
-
-
-
-	public void SetTarget(Transform t){
-		target = t;
-	}
-
-	void LateUpdate(){
-		if(target){
-			// start at cameras current x position
-			float x = IncrementTowards(transform.position.x, target.position.x, trackSpeed);
-			float y = IncrementTowards(transform.position.y, target.position.y, trackSpeed);
-			transform.position = new Vector3(x,y,transform.position.z);
+	
+	public class GameCamera : MonoBehaviour {
+		
+		public Transform target;
+		public float trackSpeed = 50;
+		
+		
+		
+		public void SetTarget(Transform t){
+			target = t;
 		}
-	}
-
-	//Increase n towards target by speed
-	private float IncrementTowards(float n, float target, float a){
-		if (n == target){
-			return n;
+		
+		void LateUpdate(){
+			if(target){
+				// start at cameras current x position
+				float x = IncrementTowards(transform.position.x, target.position.x, trackSpeed);
+				float y = IncrementTowards(transform.position.y, target.position.y + 3, trackSpeed);
+				transform.position = new Vector3(x,y,transform.position.z);
+			}
 		}
-		else{
-			float dir = Mathf.Sign(target - n); // Must n be increased or decreased to get closer to target
-			n += a * Time.deltaTime * 3 * dir;
-			
-			// if n has now passed target then return target, orherwise return n
-			if(dir == Mathf.Sign(target-n)){
+		
+		//Increase n towards target by speed
+		private float IncrementTowards(float n, float target, float a){
+			if (n == target){
 				return n;
 			}
 			else{
-				return target;
+				float dir = Mathf.Sign(target - n); // Must n be increased or decreased to get closer to target
+				n += a * Time.deltaTime * 3 * dir;
+				
+				// if n has now passed target then return target, orherwise return n
+				if(dir == Mathf.Sign(target-n)){
+					return n;
+				}
+				else{
+					return target;
+				}
 			}
 		}
-	}
+		
 
 }
