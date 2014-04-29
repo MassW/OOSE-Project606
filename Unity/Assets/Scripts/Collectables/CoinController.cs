@@ -13,7 +13,7 @@ public class CoinController : MonoBehaviour {
     
     // GUI interface
     void OnGUI(){
-        string coinText = "Coins collected: " + coinCount;
-        GUI.Box(new Rect(Screen.width - 150, 20, 130, 20), coinText);
+        string coinText = "Coins collected: " + coinCount + " / 10";
+        GUI.Box(new Rect(Screen.width - 170, 20, 150, 20), coinText);
     }
 }

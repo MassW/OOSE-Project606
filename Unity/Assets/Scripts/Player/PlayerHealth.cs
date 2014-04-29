@@ -42,7 +42,7 @@
 		void OnGUI()
 		{
 			GUI.color = Color.red;
-			GUI.Box(new Rect(0, 0, healthBarLength, 20), "Lives left: " + curHealth);
+			GUI.Box(new Rect((Screen.width/2)-(healthBarLength/2), Screen.height - 100, healthBarLength, 20), "Lives left: " + curHealth);
 			if (dead == true)
 			{
 				Dead();
@@ -59,7 +59,7 @@
 		void Dead()
 		{
 			gameObject.GetComponent<Controller_improved>().enabled = false;
-			if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2, 400, 50), "GAME OVER. Press to restart"))
+			if (GUI.Button(new Rect(Screen.width / 2-200, Screen.height / 2, 400, 50), "GAME OVER. Press to restart"))
 			{
 				//CoinController.coinCount = 0;
 				curHealth = 100;

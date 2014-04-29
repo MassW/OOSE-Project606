@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour {
 	}
 	void OnGUI(){
 		string pizzaText = "Pizzas: " + pizzaAmmount;
-		GUI.Box(new Rect(Screen.width - 150, 40, 130, 20), pizzaText);
+		GUI.Box(new Rect(Screen.width - 170, 40, 150, 20), pizzaText);
 	}
 	// Update is called once per frame
 	void Update () {
