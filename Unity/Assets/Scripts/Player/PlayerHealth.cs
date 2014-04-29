@@ -61,6 +61,7 @@
 			gameObject.GetComponent<Controller_improved>().enabled = false;
 			if (GUI.Button(new Rect(Screen.width / 2, Screen.height / 2, 400, 50), "GAME OVER. Press to restart"))
 			{
+				//CoinController.coinCount = 0;
 				curHealth = 100;
 				Application.LoadLevel("test_scene");
 			}

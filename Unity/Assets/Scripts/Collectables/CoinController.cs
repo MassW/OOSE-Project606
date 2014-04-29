@@ -4,7 +4,12 @@ using System.Collections;
 public class CoinController : MonoBehaviour {
     
     // start coinCount at 0
-    public static int coinCount = 0;
+    public static int coinCount;
+
+	void Start()
+	{
+		coinCount = 0; 
+	}
     
     // GUI interface
     void OnGUI(){

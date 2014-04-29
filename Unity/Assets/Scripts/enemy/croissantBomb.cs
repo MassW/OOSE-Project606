@@ -5,7 +5,7 @@ public class croissantBomb : MonoBehaviour {
 	PlayerHealth playerHealth;
 	// Use this for initialization
 	void Start () {
-		playerHealth = GameObject.Find("NewPlayer").gameObject.GetComponent<PlayerHealth>();
+		playerHealth = GameObject.FindWithTag("Player").gameObject.GetComponent<PlayerHealth>();
 		Destroy (gameObject,3);
 	
 	}
