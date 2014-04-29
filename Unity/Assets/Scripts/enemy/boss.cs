@@ -12,7 +12,7 @@ public class boss : MonoBehaviour {
 
 	void Start () {
 
-		bossLife=2;
+		bossLife=3;
 		InvokeRepeating ("LaunchProjectile", 3,2);
 
 	}
