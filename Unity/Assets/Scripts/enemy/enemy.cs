@@ -20,7 +20,7 @@ public class enemy : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 	
 		// Allows for the player to kill enemy by jumping on top of the enemy 
 		RaycastHit hit;
@@ -29,7 +29,7 @@ public class enemy : MonoBehaviour {
 			if(Physics.Raycast(killRay, out hit, height)){
 				if(hit.collider.tag == "Player")
 				{
-					Destroy(this.gameObject);
+					Death();
 				}
 			}
 		}

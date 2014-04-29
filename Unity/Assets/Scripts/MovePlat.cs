@@ -12,7 +12,7 @@ public class MovePlat : MonoBehaviour
 		StartCoroutine ("itemBounce", 6.0f);  // how fast does the platform switch direction
 	}
 	
-	void Update ()
+	void FixedUpdate ()
 	{
 		// makes the enemy turn when the itemBounceUp switch betwen true and false
 		Vector3 myTransform = transform.position;
